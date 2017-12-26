@@ -19,9 +19,11 @@ public class EmployeeInfo implements Employee{
 	 * declare few static and final fields and some non-static fields
 	 */
 	private String name;
+
 	private int employeeId, employeeAge;
 	private double salary;
 	private int performance;
+	private String departmentName;
 	static String address;
 	static String companyName;
 	
@@ -40,6 +42,10 @@ public class EmployeeInfo implements Employee{
 	}
     public EmployeeInfo(String name, int employeeId){
 		this.name = name;
+		this.employeeId = employeeId;
+	}
+
+	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
 	
@@ -95,6 +101,23 @@ public class EmployeeInfo implements Employee{
 		return total;
 	}
 
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public void assignDepartment(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
 	@Override
 	public int employeeId() {
 		return 0;
@@ -111,8 +134,9 @@ public class EmployeeInfo implements Employee{
 	}
 
 	@Override
-	public int calculateSalary() {
-		return 0;
+	public double calculateSalary(double salary) {
+		double yearlySalary = salary * 12;
+		return yearlySalary;
 	}
 
 	@Override
